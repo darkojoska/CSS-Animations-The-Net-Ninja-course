@@ -1,0 +1,65 @@
+body {
+    text-align: center;
+    margin: 0;
+}
+
+.wrapper {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sky {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background: lightblue;
+    height: 32.5%;
+}
+
+.grass {
+    border-top: 1px solid grey;
+    top: 32%;
+    background: lightgreen;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 32.5%;
+}
+
+.road {
+    position: absolute;
+    height: 34%;
+    display: block;
+    width: 100%;
+    background: grey;
+    top: 64%;
+    border-width: 5px 0;
+    border-style: solid;
+    border-color: #afafaf;
+}
+
+.lines {
+    height: 50%;
+    border-style: dashed;
+    border-width: 0 0 7px 0;
+    border-color: azure;
+}
+
+#mario {
+    position: absolute;
+    bottom: 56%;
+    left: 0;
+    animation-name: drive;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+}
+/* keyframes */
+@keyframes drive {
+    from {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(1366px)
+    }
+}
