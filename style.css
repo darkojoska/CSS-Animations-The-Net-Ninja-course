@@ -1,108 +1,91 @@
 body {
+    background: #222;
     text-align: center;
     margin: 0;
     overflow: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.wrapper {
-    width: 100%;
+h1 {
+    font-size: 20pt;
+}
+
+p {
+    font-size: 11pt;
+}
+
+button {
+    color: white;
+    background: #222;
+    border: 0;
+    height: 29px;
+    margin-left: -5px;
+    border-radius: 0 7px 7px 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+input {
+    border-radius: 7px 0 0 7px;
+    height: 25px;
+    border: 1px solid #222;
+    padding-left: 5px;
+}
+
+img {
+    margin: 0 auto;
+}
+
+.pop-up {
+    top: 15%;
+    position: absolute;
+    left: 39%;
+}
+
+.container {
+    position: absolute;
+    background: #fffad5;
     padding: 20px;
-    box-sizing: border-box;
+    width: 330px;
+    margin: 0;
+    top: 60%;
+    right: -21%;
 }
 
-.sky {
+.cross {
     position: absolute;
-    display: block;
-    width: 100%;
-    background: lightblue;
-    height: 32.5%;
+    top: 5%;
+    background: #333;
+    border-radius: 50%;
+    width: 16px;
+    text-align: center;
+    color: white;
+    left: 3%;
+    cursor: pointer;
+    font-size: 9pt;
 }
 
-.grass {
-    border-top: 1px solid grey;
-    top: 32%;
-    background: lightgreen;
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 32.5%;
+/* POP-UP ANIMATION STYLES */
+
+#pop-up {
+    top: -550px;
+    transform-origin: 5px 5px;
+    animation: drop 0.5s ease forwards,
+               swing 1.5s 3s ease-in-out forwards;
 }
 
-.road {
-    position: absolute;
-    height: 34%;
-    display: block;
-    width: 100%;
-    background: grey;
-    top: 64%;
-    border-width: 5px 0;
-    border-style: solid;
-    border-color: #afafaf;
+@keyframes drop {
+    0% {}
+    70% { transform: translateY(680px) }  
+    100% { transform: translateY(650px) }  
 }
 
-.lines {
-    height: 50%;
-    border-style: dashed;
-    border-width: 0 0 7px 0;
-    border-color: azure;
-}
-
-#mario {
-    position: absolute;
-    bottom: 56%;
-    left: 0;
-    animation: drive 3s both infinite linear,
-               jump 0.3s 1.2s ease;
-}
-
-#luigi {
-    position: absolute;
-    bottom: 5%;
-    left: 0;
-    animation-name: drive;
-    animation-duration: 5s;
-    animation-fill-mode: both;
-    animation-timing-function: linear; 
-    animation-iteration-count: infinite;
-    transform: rotate(-180deg);
-}
-
-/* keyframes */
-@keyframes drive {
-    from {
-        transform: translateX(-100px)
-    }to {
-        transform: translateX(1400px)
-    }
-}
-
-.cloud {
-    position: absolute;
-}
-
-.cloud:nth-child(1) {
-    width: 200px;
-    top: 40px;
-    opacity: .5;
-    animation: wind 80s linear infinite reverse;
-}
-
-.cloud:nth-child(2) {
-    width: 250px;
-    top: 0;
-    animation: wind 50s linear infinite reverse;
-}
-
-@keyframes wind {
-    from{
-        left: -300px;
-    }to {
-        left: 100%;
-    }
-}
-
-@keyframes jump {
-    0% { bottom: 56% }
-    50% { bottom: 60%}
-    100% { bottom: 56% }
+@keyframes swing {
+    0% { transform: translateY(650px) rotateZ(0deg) }
+    40% { transform: translateY(650px) rotateZ(90deg) }
+    70% { transform: translateY(650px) rotateZ(70deg) }
+    100% { transform: translateY(650px) rotateZ(75deg) }
 }
